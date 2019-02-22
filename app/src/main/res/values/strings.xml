@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Hotel Management</string>
+
+    <string-array name="district_name">
+        <item>Bagerhat</item>
+        <item>Dhaka</item>
+        <item>Jashore</item>
+        <item>Khulna</item>
+        <item>Kushtia</item>
+        <item>Satkhira</item>
+
+    </string-array>
+</resources>
