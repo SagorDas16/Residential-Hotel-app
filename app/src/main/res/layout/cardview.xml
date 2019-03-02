@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="12dp"
+    android:elevation="90dp"
+    android:layout_margin="10dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:orientation="vertical"
+        >
+  
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/imageId"
+             />
+        <TextView
+            android:id="@+id/hotelnameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotel name"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:id="@+id/locatitonId"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="20sp"
+            android:id="@+id/priceId"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>

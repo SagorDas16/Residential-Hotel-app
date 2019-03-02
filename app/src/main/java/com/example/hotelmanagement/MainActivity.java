@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private SearchView searchView;
     private Intent intent;
-
+    private Button searchbutton;
+    private TextView destinationtext,appname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listviewId);
         searchView = findViewById(R.id.searchviewId);
+        searchbutton = findViewById(R.id.searchbuttonId);
+        destinationtext = findViewById(R.id.destinationId);
+        appname = findViewById(R.id.appnameId);
 
         final String[] districtNames = getResources().getStringArray(R.array.district_name);
 
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,R.layout.district_view,R.id.districtviewId,districtNames);
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -41,7 +48,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
                 adapter.getFilter().filter(newText);
+                if(newText.length() > 0){
+                    listView.setVisibility(View.VISIBLE);
+                    searchbutton.setVisibility(View.GONE);
+                    appname.setVisibility(View.GONE);
+                    destinationtext.setVisibility(View.GONE);
+                }
+                else{
+                    listView.setVisibility(View.GONE);
+                    searchbutton.setVisibility(View.VISIBLE);
+                    appname.setVisibility(View.VISIBLE);
+                    destinationtext.setVisibility(View.VISIBLE);
+                }
                 return false;
             }
         });
